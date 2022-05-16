@@ -1,5 +1,5 @@
 Feature: Google Search
-  Need to search word "selenium" on Google
+  Need to search word "gaurav" on Google
 
   @smoke
   Scenario: Simple Search
