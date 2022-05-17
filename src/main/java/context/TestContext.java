@@ -1,8 +1,6 @@
 package context;
 
-import driver.DriverManager;
 import logger.TestLogger;
-import org.testng.annotations.Test;
 import pages.PageObjectManager;
 
 public class TestContext {

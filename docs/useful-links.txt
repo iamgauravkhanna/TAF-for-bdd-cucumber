@@ -1,0 +1,2 @@
+# Parallel Scenarios vs Parallel Features Execution
+https://qaautomation.expert/2021/07/02/parallel-testing-in-cucumber-with-testng/

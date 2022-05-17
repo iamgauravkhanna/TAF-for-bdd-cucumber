@@ -5,14 +5,14 @@ Feature: Login Scenarios
     Given I am on the login page
     And  Using credentials
     When Submitting credentials
-    Then I can see the Products page
+    Then I am on the Products page
 
   Scenario Outline: Verify login flow with various credentials
 
     Given I am on the login page
     And  Using credentials "<username>" and "<password>"
     When Submitting credentials
-    Then I can see the Products page
+    Then I am on the Products page
     Examples:
       | username                | password     |
       | standard_user           | secret_sauce |
