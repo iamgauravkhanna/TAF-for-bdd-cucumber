@@ -7,10 +7,10 @@ Feature: Login Scenarios
     When Submitting credentials
     Then I can see the Products page
 
-  Scenario Outline: Verify login flow with various users
+  Scenario Outline: Verify login flow with various credentials
 
     Given I am on the login page
-    And  Using credentials <username> and <password>
+    And  Using credentials "<username>" and "<password>"
     When Submitting credentials
     Then I can see the Products page
     Examples:

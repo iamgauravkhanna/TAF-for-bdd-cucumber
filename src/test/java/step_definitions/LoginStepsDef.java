@@ -5,15 +5,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
 import pages.PageObjectManager;
 
-public class LoginSteps {
+public class LoginStepsDef {
 
     TestContext context;
     PageObjectManager pom;
 
-    public LoginSteps(TestContext testContext) {
+    public LoginStepsDef(TestContext testContext) {
         context = testContext;
         pom = context.getPageObjectManager();
     }
@@ -33,13 +32,20 @@ public class LoginSteps {
         pom.getHomePO().submitCredentials();
     }
 
-    @Then("I can see the Products page")
+    @Then("I am on the Products page")
     public void iCanSeeTheProductsPage() {
         pom.getHomePO().verifyOnProductsPage();
     }
 
     @And("Using credentials {string} and {string}")
-    public void usingCredentialsUsernameAndPassword(String user, String pass) {
-        pom.getHomePO().enterCredentials(user, pass);
+    public void usingCredentials(String username, String password) {
+        pom.getHomePO().enterCredentials(username, password);
+    }
+
+    @Given("I am logged in")
+    public void iAmLoggedIn() {
+        iAmOnTheLoginPage();
+        usingCredentials();
+        submittingCredentials();
     }
 }

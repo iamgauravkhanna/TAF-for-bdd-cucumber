@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static constants.TestConstants.*;
@@ -185,13 +186,18 @@ public class BasePage {
         DriverManager.getDriver().navigate().to(url);
     }
 
-    public void pause(){
-        try{
-            TestLogger.INFO("Pausing for 10 Secs");
-            Thread.sleep(10000);
+    public void selectByValue(WebElement element, String text) {
+        TestLogger.INFO("Selecting dropdown value " + text);
+        Select select = new Select(element);
+        select.selectByValue(text);
+    }
+
+    public void pause() {
+        try {
+            TestLogger.INFO("Pausing for 3 Secs");
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
-
 }
