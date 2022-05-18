@@ -10,13 +10,13 @@ public class Hooks {
 
     @Before
     public void beforeScenario(Scenario scenario) {
-        TestLogger.INFO("This will run before the Scenario = " + scenario.getName());
+        TestLogger.INFO_STEP("Scenario Started : " + scenario.getName());
         DriverManager.setDriver("chrome");
     }
 
     @After
     public void afterScenario(Scenario scenario) {
-        TestLogger.INFO("This will run after the Scenario = " + scenario.getName());
+        TestLogger.INFO_STEP("Scenario Finished : " + scenario.getName());
         DriverManager.getDriver().quit();
     }
 }

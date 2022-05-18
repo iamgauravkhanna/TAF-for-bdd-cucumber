@@ -10,7 +10,6 @@ public class ITestListenerImpl implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-
         TestLogger.INFO(("Running Test Method " + result.getMethod().getMethodName() + "..."));
         ExtentTestManager.startTest(result.getMethod().getMethodName(),result.getMethod().getDescription());
     }

@@ -25,6 +25,7 @@ public class BasePage {
         webDriver = DriverManager.getDriver();
         PageFactory.initElements(webDriver, this);
         webDriverWait = new WebDriverWait(webDriver, Duration.ofSeconds(EXPLICIT_WAIT));
+        TestLogger.INFO("Creating BasePage ID : " + this.hashCode());
     }
 
     public void openBrowser(String link) {

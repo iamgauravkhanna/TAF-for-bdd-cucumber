@@ -1,5 +1,13 @@
 ls -ltr
 
+cd reports
+
+rm -rf test-reports*
+
+ls -ltr
+
+cd ..
+
 mvn clean
 
 ls -ltr

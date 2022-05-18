@@ -1,5 +1,6 @@
 package pages;
 
+import logger.TestLogger;
 import org.openqa.selenium.WebDriver;
 
 public class PageObjectManager {
