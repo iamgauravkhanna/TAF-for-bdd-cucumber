@@ -1,5 +1,6 @@
 Feature: Login Scenarios
 
+  @login
   Scenario: As a registered user, I should be able to login
 
     Given I am on the login page
