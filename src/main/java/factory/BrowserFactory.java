@@ -15,7 +15,7 @@ public class BrowserFactory {
 
     public static WebDriver createDriverInstance(String browser) {
 
-        WebDriver driver = null;
+        WebDriver webDriver = null;
 
         System.setProperty("executionEnvironment","local");
 
@@ -24,35 +24,35 @@ public class BrowserFactory {
                 case BROWSER_CHROME: {
                     TestLogger.INFO("Creating Chrome Browser Instance");
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    webDriver = new ChromeDriver();
                     break;
                 }
                 case BROWSER_FIREFOX: {
                     TestLogger.INFO("Creating Firefox Browser Instance");
                     WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
+                    webDriver = new FirefoxDriver();
                     break;
                 }
                 case BROWSER_SAFARI: {
-                    driver = new SafariDriver();
+                    webDriver = new SafariDriver();
                     break;
                 }
                 case BROWSER_EDGE: {
                     WebDriverManager.edgedriver().setup();
-                    driver = new EdgeDriver();
+                    webDriver = new EdgeDriver();
                     break;
                 }
                 case BROWSER_OPERA: {
                     WebDriverManager.operadriver().setup();
-                    driver = new OperaDriver();
+                    webDriver = new OperaDriver();
                     break;
                 }
                 default:
                     throw new IllegalStateException("INVALID BROWSER: " + browser);
             }
         }
-        driver.manage().window().maximize();
-        TestLogger.INFO("Returning new Driver with ID : " + driver.hashCode());
-        return driver;
+        webDriver.manage().window().maximize();
+        TestLogger.INFO("Returning new Driver with ID : " + webDriver.hashCode());
+        return webDriver;
     }
 }
