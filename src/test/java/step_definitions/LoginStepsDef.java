@@ -13,8 +13,8 @@ public class LoginStepsDef {
     PageObjectManager pom;
 
     public LoginStepsDef(TestContext testContext) {
+        pom = testContext.getPageObjectManager();
         context = testContext;
-        pom = context.getPageObjectManager();
     }
 
     @Given("I am on the login page")

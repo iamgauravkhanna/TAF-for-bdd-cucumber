@@ -1,21 +1,24 @@
 package step_definitions;
 
 import context.TestContext;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pages.CartPage;
 import pages.ProductsPage;
 
 public class CartStepsDef {
 
     TestContext context;
-    ProductsPage productsPage;
+    CartPage cartPage;
+
 
     public CartStepsDef(TestContext testContext) {
         context = testContext;
+        cartPage = testContext.getPageObjectManager().getCartPO();
     }
 
-    @When("I click the shopping cart icon")
-    public void iClickTheShoppingCartIcon() {
-        productsPage = context.getPageObjectManager().getProductsPO();
-        productsPage.clickCartIcon();
+    @Then("I am directed to my shopping cart page")
+    public void iAmDirectedToMyShoppingCartPage() {
+        cartPage.waitForCartPage();
     }
 }

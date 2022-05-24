@@ -11,7 +11,7 @@ public class Hooks {
     @Before
     public void beforeScenario(Scenario scenario) {
         TestLogger.INFO_STEP("Scenario Started : " + scenario.getName());
-        DriverManager.setDriver("chrome");
+        DriverManager.setDriver(System.getProperty("browser"));
     }
 
     @After

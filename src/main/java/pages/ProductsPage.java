@@ -11,9 +11,6 @@ public class ProductsPage extends BasePage {
     @FindBy(xpath = "//a[@class='shopping_cart_link']")
     private WebElement cartIcon;
 
-    @FindBy(xpath = "//span[text()='Your Cart']")
-    private WebElement cartHeading;
-
     public void selectLowToHigh() {
         pause();
         selectByValue(dropDown, "lohi");
@@ -22,8 +19,5 @@ public class ProductsPage extends BasePage {
 
     public void clickCartIcon() {
         click(cartIcon);
-        waitForElementVisibility(cartHeading);
-        pause();
-        assertElementIsPresent(cartHeading);
     }
 }

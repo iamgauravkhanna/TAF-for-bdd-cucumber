@@ -17,8 +17,6 @@ public class BrowserFactory {
 
         WebDriver webDriver = null;
 
-        System.setProperty("executionEnvironment","local");
-
         if (System.getProperty("executionEnvironment").equalsIgnoreCase("local")) {
             switch (browser) {
                 case BROWSER_CHROME: {
