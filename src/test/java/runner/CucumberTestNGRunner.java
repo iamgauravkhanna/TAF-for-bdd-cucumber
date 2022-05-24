@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"step_definitions"},
-        plugin = {"pretty", "html:target/cucumber.html", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/html/ExtentReport123.html"},
+        plugin = {"pretty", "html:target/cucumber.html"},
         tags = "@cart"
 )
 public class CucumberTestNGRunner extends AbstractTestNGCucumberTests {
