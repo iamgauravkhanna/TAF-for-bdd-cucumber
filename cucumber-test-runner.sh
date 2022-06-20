@@ -5,4 +5,5 @@ echo $foo
 mvn clean install test \
 -Dcucumber.filter.tags="@login" \
 -Dbrowser=chrome \
--DexecutionEnvironment=local
+-DexecutionEnvironment=local \
+-DtestEnvironment=qa

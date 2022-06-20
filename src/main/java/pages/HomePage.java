@@ -1,5 +1,6 @@
 package pages;
 
+import config.ConfigLoader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,7 +17,7 @@ public class HomePage extends BasePage {
     private WebElement loginBtn;
 
     public void open() {
-        webDriver.get("https://www.saucedemo.com/");
+        webDriver.get(ConfigLoader.getInstance().get("base.url"));
     }
 
     public void enterCredentials() {
