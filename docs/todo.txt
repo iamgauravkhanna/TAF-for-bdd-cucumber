@@ -1,1 +1,2 @@
 - Cucumber 7 Features
+- Extent Report Cucumber Adapter

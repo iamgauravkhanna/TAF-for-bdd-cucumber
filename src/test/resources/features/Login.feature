@@ -8,6 +8,7 @@ Feature: Login Scenarios
     When Submitting credentials
     Then I am on the Products page
 
+  @login2
   Scenario Outline: Verify login flow with various credentials
 
     Given I am on the login page
