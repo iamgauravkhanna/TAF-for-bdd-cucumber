@@ -17,6 +17,7 @@ public class TestConstants {
 
     public static final String USER_DIR = System.getProperty("user.dir");
     public static final String DIRECTORY_ENV_CONFIG = "/src/main/resources/";
+    public static final String RESOURCE_PATH = USER_DIR + DIRECTORY_ENV_CONFIG + System.getProperty("testEnvironment") + File.separator;
 
     public static final String ATTRIBUTE_VALUE = "value";
 

@@ -1,5 +1,6 @@
 package config;
 
+import constants.TestConstants;
 import logger.TestLogger;
 import property.PropertyUtil;
 
@@ -20,17 +21,14 @@ public class ConfigLoader {
 
     private ConfigLoader() {
 
-        String testEnvironment = System.getProperty("testEnvironment") ;
 
-        String resourcePath = USER_DIR + DIRECTORY_ENV_CONFIG + testEnvironment + File.separator;
 
-        File directoryPath = new File(resourcePath);
+        File directoryPath = new File(TestConstants.RESOURCE_PATH);
 
         File[] filesList = directoryPath.listFiles();
 
         for(File file : filesList) {
-            PropertyUtil.propertyLoader(properties,resourcePath + file.getName());
-            TestLogger.INFO(properties.toString());
+            PropertyUtil.propertyLoader(properties,TestConstants.RESOURCE_PATH + file.getName());
         }
     }
 
